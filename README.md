@@ -1,2 +1,4 @@
-# Personal-Portfolio
-Responsive personal portfolio website built with HTML, CSS &amp; JavaScript. Features smooth scrolling, animated hero, tabbed About section, interactive projects with modals, skills/experience cards, contact info, social links, and scroll-to-top functionality. Modern, mobile-friendly UI.
+Built a fully responsive personal portfolio using HTML, CSS, and JavaScript. Implemented
+smooth animations, section-based navigation, and an interactive certificate viewer using modals.
+Designed the site to highlight projects, certifications, and skills with a modern UI and optimized
+responsiveness across devices.
