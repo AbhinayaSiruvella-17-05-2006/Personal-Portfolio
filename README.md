@@ -4,12 +4,14 @@ An interactive and fully responsive personal portfolio website built using HTML,
 
 The portfolio is designed as a dynamic single-page application that showcases my skills, internships, certifications, education, and projects with smooth animations and modern UI effects.
 
+---
 
 🚀 Live Deployment
 
 🌐 Portfolio Website
 👉 https://portfolio-website-tb74.onrender.com/
 
+---
 
 ✨ Key Features
 
@@ -33,6 +35,7 @@ Scroll-to-top button
 
 Fully responsive across devices
 
+---
 
 🛠 Technology Stack
 
@@ -44,6 +47,7 @@ JavaScript (ES6+)
 
 Font Awesome
 
+---
 
 🎯 Purpose
 
