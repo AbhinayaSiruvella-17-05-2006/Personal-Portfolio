@@ -3,1251 +3,1699 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Animated Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Siruvella Abhinaya | Professional Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <header>
-        <div class="header-container">
-            <div class="logo">My Portfolio</div>
-            <nav>
-                <ul>
-                    <li><a href="#" data-target="home">Home</a></li>
-                    <li><a href="#" data-target="about">About</a></li>
-                    <li><a href="#" data-target="certifications-main">Certifications</a></li> 
-                    <li><a href="#" data-target="projects">Projects</a></li>
-                    <li><a href="#" data-target="contact">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <span class="loader-text">Loading...</span>
         </div>
-    </header>
+    </div>
 
-    <section id="home" class="hero section">
-        <div class="hero-content-left">
-            <h1 class="hero-title">Hello, I'm </h1><h1 class="hero-title"><span class="name">Siruvella Abhinaya</span>.</h1>
-        
-            <div class="social-links">
-                <a href="https://github.com/AbhinayaSiruvella-17-05-2006" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/siruvella-abhinaya-8504572bb" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <canvas id="particle-canvas"></canvas>
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-wrapper" id="cursor-wrapper">
+        <div class="cursor-inner" id="cursor-inner"></div>
+        <div class="cursor-outer" id="cursor-outer"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <div class="logo-box">
+                    <span>S</span>
+                    <span>A</span>
+                </div>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active" data-section="hero">
+                    <span class="nav-dot"></span>
+                    <span>Home</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <span class="nav-dot"></span>
+                    <span>About</span>
+                </a>
+                <a href="#certifications" class="nav-link" data-section="certifications">
+                    <span class="nav-dot"></span>
+                    <span>Certifications</span>
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <span class="nav-dot"></span>
+                    <span>Projects</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <span class="nav-dot"></span>
+                    <span>Contact</span>
+                </a>
             </div>
-            <div class="cta-buttons">
-                <a href="#" data-target="about" class="cta-button">Know More About Me</a>
-            </div>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
-        
-        <div class="hero-shape shape-1"></div>
-        <div class="hero-shape shape-2"></div>
-        <div class="hero-shape shape-3"></div>
-    </section>
+    </nav>
 
-    <section id="about" class="section hidden-content">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content-wrapper-new">
-            <div class="about-animation-shape about-animation-shape-1"></div>
-            <div class="about-animation-shape about-animation-shape-2"></div>
-            <div class="about-animation-shape about-animation-shape-3"></div>
-            <div class="about-text-column-new">
-                <p class="about-intro">A curious and dedicated technophile with a keen interest in becoming a Full Stack Developer. I thrive on the challenge of understanding how systems work, from the front-end user experience to the back-end logic. My natural aptitude for quickly grasping new concepts allows me to adapt to different technologies and tackle problems effectively. I am a passionate coder who enjoys turning ideas into functional, well-designed applications.</p>
-
-                <div class="tab-titles">
-                    <p class="tab-link"><a href="#" data-target="skills-section">Skills</a></p>
-                    <p class="tab-link"><a href="#" data-target="experience-section">Internships</a></p>
-                    <p class="tab-link"><a href="#" data-target="education-section">Education</a></p>
-                </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <span class="mobile-menu-title">Navigation</span>
+                <button class="mobile-close" id="mobile-close" aria-label="Close Menu">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-        </div>
-        <div class="section-shape shape-1"></div>
-        <div class="section-shape shape-2"></div>
-        <div class="section-shape shape-3"></div>
-    </section>
-    
-    <section id="skills-section" class="content-section hidden-content">
-        <h3>Skills</h3>
-        <div class="content-shape content-shape-1"></div>
-        <div class="content-shape content-shape-2"></div>
-        <div class="content-shape content-shape-3"></div>
-        <div class="content-shape content-shape-4"></div>
-        <div class="content-shape content-shape-5"></div>
-        <div class="tab-contents" id="skills">
-            <div class="content-grid">
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">Programming Languages</span><p>C, C++, Java, Python</p></li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">Web & Front-End</span><p>HTML, CSS, JavaScript, React, Angular</p></li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">Back-End</span><p>Node.js, Express.js</p></li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">Databases</span><p>MongoDB, DBMS</p></li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">Core CS</span><p>Data Structures & Algorithms, Design and Analysis of Algorithms, Operating Systems</p></li>
-                    </ul>
-                </div>
+            <div class="mobile-links">
+                <a href="#hero" class="mobile-link">Home</a>
+                <a href="#about" class="mobile-link">About</a>
+                <a href="#certifications" class="mobile-link">Certifications</a>
+                <a href="#projects" class="mobile-link">Projects</a>
+                <a href="#contact" class="mobile-link">Contact</a>
             </div>
-        </div>
-        <a href="#about" class="tab-up-arrow" aria-label="Go up to tabs"><i class="fas fa-arrow-up"></i></a>
-    </section>
-
-    <section id="experience-section" class="content-section hidden-content">
-        <h3>Internships</h3>
-        <div class="content-shape content-shape-1"></div>
-        <div class="content-shape content-shape-2"></div>
-        <div class="content-shape content-shape-3"></div>
-        <div class="content-shape content-shape-4"></div>
-        <div class="content-shape content-shape-5"></div>
-        <div class="tab-contents" id="experience">
-            <div class="content-grid">
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">september-November [2025]</span><p>Infosys Springboard Virtual Internship 6.0</p></li>
-                    </ul>
-                </div>
-                
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">june-july [2025]</span><p>EDUNET FOUNDATION | SHELL | ARTIFICIAL INTELLIGENCE | 4-WEEKS VIRTUAL INTERNSHIP</p></li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">june-august [2025]</span><p>EDUNET FOUNDATION - IBM SKILLSBUILD - ARTIFICIAL INTELLIGENCE - 6 WEEKS INTERNSHIP JUNE 2025 BATCH</p></li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">july-august [2025]</span><p>EDUNET FOUNDATION - IBM SKILLSBUILD 4WEEKS INTERNSHIP ON AI & IBM CLOUD TECHNOLOGIES - JUNE 2025</p></li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">march-april [2026]</span><p>ServiceNow University Virtual Internship Program</p></li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">may-june [2025]</span><p>Virtual Intern - AWS AI/ML [Eduskills in collaboration with AWS]</p></li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">july-september [2025]</span><p>Java Full Stack Developer Virtual Internship(Eduskills)</p></li>
-                    </ul>
-                </div>
+            <div class="mobile-socials">
+                <a href="https://github.com/AbhinayaSiruvella-17-05-2006" target="_blank" class="mobile-social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/siruvella-abhinaya-8504572bb" target="_blank" class="mobile-social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
         </div>
-        <a href="#about" class="tab-up-arrow" aria-label="Go up to tabs"><i class="fas fa-arrow-up"></i></a>
-    </section>
+    </div>
 
-    <section id="education-section" class="content-section hidden-content">
-        <h3>Education</h3>
-        <div class="content-shape content-shape-1"></div>
-        <div class="content-shape content-shape-2"></div>
-        <div class="content-shape content-shape-3"></div>
-        <div class="content-shape content-shape-4"></div>
-        <div class="content-shape content-shape-5"></div>
-        <div class="tab-contents" id="education">
-            <div class="content-grid">
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">2023 - present</span><p>Bachelor of Engineering in Computer Science, MVSR Engineering College</p></li>
-                    </ul>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Welcome to my portfolio</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="title-line">Hello, I'm</span>
+                        <span class="title-highlight">Siruvella Abhinaya</span>
+                    </h1>
+
+                    <div class="hero-subtitle">
+                        <span id="typed-text"></span>
+                        <span class="typed-cursor">|</span>
+                    </div>
+
+                    <p class="hero-description">
+                        Passionate about building intelligent, scalable, and user-centric digital solutions. I enjoy transforming complex challenges into impactful applications by combining modern technologies, data-driven insights, and innovative thinking with a strong focus on continuous learning and problem-solving
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore My Work</span>
+                            <i class="fas fa-rocket"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get in Touch</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="https://github.com/AbhinayaSiruvella-17-05-2006" target="_blank" class="social-btn" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/siruvella-abhinaya-8504572bb" target="_blank" class="social-btn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">2021 - 2023</span><p>Intermediate, Narayna Junior College</p></li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li><span class="tab-category">2011 - 2021</span><p>High School, St. Joseph's English School (CBSE Board)</p></li>
-                    </ul>
+
+                <div class="hero-graphic">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="window-title">profile.js</span>
+                        </div>
+                        <div class="window-body">
+                            <pre><code><span class="code-line"><span class="kw">const</span> <span class="vr">profile</span> = {</span>
+<span class="code-line">  <span class="pr">name</span>: <span class="st">"Siruvella Abhinaya"</span>,</span>
+<span class="code-line">  <span class="pr">location</span>: <span class="st">"Hyderabad, India"</span>,</span>
+<span class="code-line">  <span class="pr">interests</span>: [</span>
+<span class="code-line">    <span class="st">"Software Development"</span>,</span>
+<span class="code-line">    <span class="st">"Full Stack Development"</span>,</span>
+<span class="code-line">    <span class="st">"AI & Machine Learning"</span>,</span>
+<span class="code-line">    <span class="st">"Data Analytics"</span></span>
+<span class="code-line">    <span class="st">"Problem Solving"</span></span>
+<span class="code-line">  ],</span>
+<span class="code-line">  <span class="pr">passionate</span>: <span class="bl">true</span></span>
+<span class="code-line">};</span></code></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <a href="#about" class="tab-up-arrow" aria-label="Go up to tabs"><i class="fas fa-arrow-up"></i></a>
-    </section>
 
-    <section id="certifications-main" class="section hidden-content">
-        <h2 class="section-title">Certifications</h2>
-        <p class="cert-intro">Click on a category below to view the detailed list of achievements.</p>
-        
-        <div class="tab-contents">
-            <div class="content-grid certifications-grid">
-                
-                <div class="content-item-card cert-category-card" data-target="internship-certs">
-                    <ul>
-                        <li><span class="tab-category">Internship Certifications</span><p>Internship Certifications</p></li>
-                    </ul>
+            <div class="hero-stats">
+
+    <div class="stat-item">
+        <span class="stat-number" data-target="20">0</span>
+        <span class="stat-plus">+</span>
+        <span class="stat-label">Projects</span>
+    </div>
+
+    <div class="stat-divider"></div>
+
+    <div class="stat-item">
+        <span class="stat-number" data-target="2">0</span>
+        <span class="stat-plus">×</span>
+        <span class="stat-label">Wins</span>
+    </div>
+
+    <div class="stat-divider"></div>
+
+    <div class="stat-item">
+        <span class="stat-sih">SIH</span>
+        <span class="stat-label">Finalist</span>
+    </div>
+
+</div>
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
                 </div>
-                
-                <div class="content-item-card cert-category-card" data-target="hackathon-certs">
-                    <ul>
-                        <li><span class="tab-category">Hackathon Certifications</span><p>Hackathon Certifications</p></li>
-                    </ul>
+                <span>Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-number">01</span>
+                        <span class="badge-text">About Me</span>
+                    </div>
+                    <h2 class="section-title">Get to Know Me Better</h2>
                 </div>
-                
-                <div class="content-item-card cert-category-card" data-target="course-certs">
-                    <ul>
-                        <li><span class="tab-category">Certifications</span><p>Certifications</p></li>
-                    </ul>
+
+                <div class="about-grid">
+                    <div class="about-intro">
+                        <p class="about-text">
+                            A curious and dedicated technophile with a passion for building impactful digital solutions. I enjoy understanding how systems work, from crafting intuitive user experiences to designing efficient back-end architectures and exploring intelligent, data-driven technologies.
+                        </p>
+                        <p class="about-text">
+                           My natural aptitude for quickly grasping new concepts enables me to adapt to evolving technologies and solve complex challenges effectively. As a Smart India Hackathon Finalist and winner of multiple hackathons, I thrive in collaborative and competitive environments where innovation, creativity, and problem-solving come together to build meaningful solutions. I am passionate about transforming ideas into scalable, well-designed applications while continuously learning and embracing emerging technologies.
+                        </p>
+
+                        <div class="about-highlights">
+
+    <div class="highlight-card">
+        <div class="highlight-icon">
+            <i class="fas fa-trophy"></i>
+        </div>
+        <div class="highlight-content">
+            <h4>Innovation Driven</h4>
+            <p>SIH Finalist & Multiple Hackathon Winner</p>
+        </div>
+    </div>
+
+    <div class="highlight-card">
+        <div class="highlight-icon">
+            <i class="fas fa-bolt"></i>
+        </div>
+        <div class="highlight-content">
+            <h4>Fast Learner</h4>
+            <p>Quick to adapt and master emerging technologies</p>
+        </div>
+    </div>
+
+    <div class="highlight-card">
+        <div class="highlight-icon">
+            <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="highlight-content">
+            <h4>Problem Solver</h4>
+            <p>Transforming complex challenges into impactful solutions</p>
+        </div>
+    </div>
+
+</div>
+                    </div>
+
+                    <div class="about-tabs">
+                        <div class="tabs-header">
+                            <button class="tab-btn active" data-tab="skills">
+                                <i class="fas fa-code"></i>
+                                <span>Skills</span>
+                            </button>
+                            <button class="tab-btn" data-tab="experience">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Internships</span>
+                            </button>
+                            <button class="tab-btn" data-tab="education">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Education</span>
+                            </button>
+                        </div>
+
+                        <div class="tabs-content">
+                            <!-- Skills Tab -->
+                            <div class="tab-panel active" id="skills-panel">
+                                <div class="skills-grid">
+                                    <div class="skill-category">
+                                        <div class="category-header">
+                                            <div class="category-icon">
+                                                <i class="fas fa-terminal"></i>
+                                            </div>
+                                            <h3>Programming Languages</h3>
+                                        </div>
+                                        <div class="skill-chips">
+                                            <span class="chip">C</span>
+                                            <span class="chip">C++</span>
+                                            <span class="chip">Java</span>
+                                            <span class="chip">Python</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="skill-category">
+                                        <div class="category-header">
+                                            <div class="category-icon">
+                                                <i class="fas fa-laptop-code"></i>
+                                            </div>
+                                            <h3>Web Development</h3>
+                                        </div>
+                                        <div class="skill-chips">
+                                            <span class="chip">HTML5</span>
+                                            <span class="chip">CSS3</span>
+                                            <span class="chip">JavaScript</span>
+                                            <span class="chip">React</span>
+                                            <span class="chip">Angular</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="skill-category">
+                                        <div class="category-header">
+                                            <div class="category-icon">
+                                                <i class="fas fa-server"></i>
+                                            </div>
+                                            <h3>Backend Development</h3>
+                                        </div>
+                                        <div class="skill-chips">
+                                            <span class="chip">Node.js</span>
+                                            <span class="chip">Express.js</span>
+                                            <span class="chip">Spring Boot</span>
+                                            <span class="chip">Flask</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="skill-category">
+                                        <div class="category-header">
+                                            <div class="category-icon">
+                                                <i class="fas fa-database"></i>
+                                            </div>
+                                            <h3>Databases</h3>
+                                        </div>
+                                        <div class="skill-chips">
+                                            <span class="chip">MongoDB</span>
+                                            <span class="chip">PostgreSQL</span>
+                                            <span class="chip">MySQL</span>
+                                            <span class="chip">Redis</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="skill-category">
+                                        <div class="category-header">
+                                            <div class="category-icon">
+                                                <i class="fas fa-brain"></i>
+                                            </div>
+                                            <h3>AI & Data Science</h3>
+                                        </div>
+                                        <div class="skill-chips">
+                                            <span class="chip">Machine Learning</span>
+                                            <span class="chip">TensorFlow</span>
+                                            <span class="chip">Data Analysis</span>
+                                            <span class="chip">Power BI</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="skill-category">
+                                        <div class="category-header">
+                                            <div class="category-icon">
+                                                <i class="fas fa-tools"></i>
+                                            </div>
+                                            <h3>Cloud & Tools</h3>
+                                        </div>
+                                        <div class="skill-chips">
+                                            <span class="chip">Git</span>
+                                            <span class="chip">Docker</span>
+                                            <span class="chip">AWS</span>
+                                            <span class="chip">Kafka</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Experience Tab -->
+                            <div class="tab-panel" id="experience-panel">
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">Sept-Nov 2025</span>
+                                            <h4>Infosys Springboard Virtual Internship 6.0</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">June-July 2025</span>
+                                            <h4>EDUNET Foundation | SHELL | AI Internship</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">June-Aug 2025</span>
+                                            <h4>Edunet Foundation | IBM SkillsBuild | AI Internship</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">July-Aug 2025</span>
+                                            <h4>Edunet Foundation | IBM Cloud Technologies Internship</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">Mar-Apr 2026</span>
+                                            <h4>ServiceNow University Virtual Internship</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">May-June 2025</span>
+                                            <h4>AWS AI/ML Virtual Intern (Eduskills)</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">July-Sept 2025</span>
+                                            <h4>Java Full Stack Developer Intern(Eduskills)</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Education Tab -->
+                            <div class="tab-panel" id="education-panel">
+                                <div class="education-list">
+                                    <div class="education-item">
+                                        <div class="education-icon">
+                                            <i class="fas fa-university"></i>
+                                        </div>
+                                        <div class="education-content">
+                                            <span class="education-date">2023 - Present</span>
+                                            <h4>B.E. Computer Science</h4>
+                                            <p>MVSR Engineering College</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="education-item">
+                                        <div class="education-icon">
+                                            <i class="fas fa-book-reader"></i>
+                                        </div>
+                                        <div class="education-content">
+                                            <span class="education-date">2021 - 2023</span>
+                                            <h4>Intermediate</h4>
+                                            <p>Narayana Junior College</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="education-item">
+                                        <div class="education-icon">
+                                            <i class="fas fa-school"></i>
+                                        </div>
+                                        <div class="education-content">
+                                            <span class="education-date">2020 - 2021</span>
+                                            <h4>High School (CBSE)</h4>
+                                            <p>St. Joseph's English School</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section-shape shape-1"></div>
-        <div class="section-shape shape-2"></div>
-        <div class="section-shape shape-3"></div>
-    </section>
-    
-    <section id="internship-certs" class="content-section hidden-content">
-        <h3>Internship Certifications</h3>
-        <div class="content-shape content-shape-1"></div>
-        <div class="content-shape content-shape-2"></div>
-        <div class="tab-contents">
-            <div class="content-grid">
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">Infosys Springboard Virtual Internship 6.0</span> 
+        <!-- Certifications Section -->
+        <section id="certifications" class="cert-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-number">02</span>
+                        <span class="badge-text">Certifications</span>
+                    </div>
+                    <h2 class="section-title">Achievements & Credentials</h2>
+                    <p class="section-subtitle">Collection of professional certifications, hackathon achievements, and course completions</p>
+                </div>
 
-    
-    <button class="view-cert-btn" 
-            data-cert-title="Infosys Springboard Virtual Internship 6.0" 
-            data-image-url="https://drive.google.com/file/d/1K2sPSXwkXLvmo9SbHYmSWYRnhUPrYV4n/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>
+                <div class="cert-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="internship">Internships</button>
+                    <button class="filter-btn" data-filter="hackathon">Hackathons</button>
+                    <button class="filter-btn" data-filter="course">Courses</button>
                 </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">AI & ML Internship (AICTE & Edunet)</span> 
+                <div class="course-subfilters" id="course-subfilters">
 
-    
-    <button class="view-cert-btn" 
-            data-cert-title="AICTE/Edunet 6-Week AI & ML Internship" 
-            data-image-url="https://drive.google.com/file/d/1tjAPxNIeLIY8xjOFkvGSGSvP1Cy6Blm_/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">IBM Cloud & AI Technologies Internship(AICTE & Edunet)</span> 
+    <button class="sub-filter-btn active"
+            data-provider="allcourses">
+        All Courses
+    </button>
 
-    
-    <button class="view-cert-btn" 
-            data-cert-title="IBM/AICTE 4-Week Internship: AI & Cloud" 
-            data-image-url="https://drive.google.com/file/d/11amYGe-j2t_dwInQx25Huwx1aNoc0-3u/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">Shell/AICTE Green Skills Internship (AI/Data)</span> 
+    <button class="sub-filter-btn"
+        data-provider="global">
+    ⭐ Global Certifications
+</button>
 
-    
-    <button class="view-cert-btn" 
-            data-cert-title="Shell/AICTE 4-Week Green Skills Internship (AI & Data Analytics)" 
-            data-image-url="https://drive.google.com/file/d/1jm-94BTrkgm85D-5XlywDtaTEAmnFL_L/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>
-                </div>
-                 <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">ServiceNow University Virtual Internship Program</span> 
+    <button class="sub-filter-btn"
+            data-provider="ibm">
+        ⭐ IBM SkillsBuild
+    </button>
 
-    
-    <button class="view-cert-btn" 
-            data-cert-title="ServiceNow University Virtual Internship Program" 
-            data-image-url="https://drive.google.com/file/d/1UvZEh344sjaXjuMs1TJV655MjQGs-moU/view?usp=drive_link">
-        View Certificate
-    </button> 
-</li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">AI/ML Virtual Internship(Eduskills)</span> 
+    <button class="sub-filter-btn"
+            data-provider="forage">
+        ⭐ Forage Simulations
+    </button>
 
-    
-    <button class="view-cert-btn" 
-            data-cert-title="AI/ML Virtual Internship" 
-            data-image-url="https://drive.google.com/file/d/17WrLfjUxcVdBvlWQ-_-qomQ2af_3pUmK/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">Java Full Stack Developer Virtual Internship(Eduskills)</span> 
+    <button class="sub-filter-btn"
+            data-provider="infosys">
+        Infosys Springboard
+    </button>
 
-    
-    <button class="view-cert-btn" 
-            data-cert-title="Java Full Stack Developer Virtual Internship(Eduskills)" 
-            data-image-url="https://drive.google.com/file/d/1qSi8E2Tov0H7dQuQqK3igCjutXHLB3eh/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <a href="#certifications-main" class="tab-up-arrow" aria-label="Go back to certifications menu"><i class="fas fa-arrow-up"></i></a>
-    </section>
+    <button class="sub-filter-btn"
+            data-provider="academic">
+        Academic & Learning
+    </button>
 
-    <section id="hackathon-certs" class="content-section hidden-content">
-        <h3>Hackathon Certifications</h3>
-        <div class="content-shape content-shape-1"></div>
-        <div class="content-shape content-shape-2"></div>
-        <div class="tab-contents">
-            <div class="content-grid">
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">SIH Hackathon Certificate</span>  
-    <button class="view-cert-btn" 
-            data-cert-title="SIH Hackathon Certificate" 
-            data-image-url="https://drive.google.com/file/d/1kigH2AnRm8b1kwsckoO8VJXepxUpk21b/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>   
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">1st Place in CBIT Hackathon (Sudhee 2026) at Chaitanya Bharathi Institute of Technology, Hyderabad</span>  
-    <button class="view-cert-btn" 
-            data-cert-title="1st Place in CBIT Hackathon (Sudhee 2026)" 
-            data-image-url="https://drive.google.com/file/d/1_ke3C589tyRnhMReHZCCEwz-1K7cxWMB/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>   
-                </div>
-                 <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">1st Rank in Smarathon-26 at Vardhaman College of Engineering (Festronix-25)</span>  
-    <button class="view-cert-btn" 
-            data-cert-title="Smarathon-26 at Vardhaman College of Engineering (Festronix-25)" 
-            data-image-url="https://drive.google.com/file/d/1HREG7r8wGEVX7yjP6uMH03jLYknPOq_9/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>   
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">HackerRank Orchestrate May 2026 – AI Agent Challenge</span>  
-    <button class="view-cert-btn" 
-            data-cert-title="HackerRank Orchestrate May 2026 – AI Agent Challenge" 
-            data-image-url="https://drive.google.com/file/d/1M_KElxatxXopdpIiuHdyeWh9VFOGjj8M/view?usp=drive_link">
-        View Certificate
-    </button> 
-</li>
-                    </ul>   
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">NASA Participation Certificate</span>  
-    <button class="view-cert-btn" 
-            data-cert-title="NASA Certificate" 
-            data-image-url="https://drive.google.com/file/d/1AD2LrpFbQ4Vlt2jGYWtLgJiAUmg0J08C/view?usp=drive_link">
-        View Certificate
-    </button> 
-</li>
-                    </ul>   
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">Impactech Hackathon 2K26 Participation Certificate</span>  
-    <button class="view-cert-btn" 
-            data-cert-title="Impactech Hackathon 2K26 Certificate" 
-            data-image-url="https://drive.google.com/file/d/11OyVI_t0iu3dJdCg7kKZTLAP1kNGzzDS/view?usp=drive_link">
-        View Certificate
-    </button> 
-</li>
-                    </ul>   
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">HACKIT-ON Hackathon Participation Certificate</span> 
-    <button class="view-cert-btn" 
-            data-cert-title="HACKIT-ON Hackathon(MVSR)" 
-            data-image-url="https://drive.google.com/file/d/1xlB_QvSovww5py5EfhcSJbdbGU5fhjkc/view?usp=drive_link">
-        View Certificate
-    </button> 
-      </li>
-                    </ul> 
-                </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">ALTHON Participation Certificate</span> 
-    <button class="view-cert-btn" 
-            data-cert-title="ALTHON Hackathon(MVSR)" 
-            data-image-url="https://drive.google.com/file/d/1Gyv2tZoYYgiTin0-bgKrdawQjAeRF8iz/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>
+</div>
+                <div class="cert-grid" id="cert-grid">
+                    <!-- Internship Certifications -->
+                    <div class="cert-card" data-category="internship">
+                        <div class="cert-inner">
+                            <div class="cert-icon internship">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Infosys Springboard Virtual Internship 6.0</h3>
+                                <p class="cert-meta">Sept-Nov 2025</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1K2sPSXwkXLvmo9SbHYmSWYRnhUPrYV4n/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="internship">
+                        <div class="cert-inner">
+                            <div class="cert-icon internship">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>AI & ML Internship (AICTE & Edunet)</h3>
+                                <p class="cert-meta">2025</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1tjAPxNIeLIY8xjOFkvGSGSvP1Cy6Blm_/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="internship">
+                        <div class="cert-inner">
+                            <div class="cert-icon internship">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>IBM Cloud & AI Technologies Internship</h3>
+                                <p class="cert-meta">2025</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/11amYGe-j2t_dwInQx25Huwx1aNoc0-3u/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="internship">
+                        <div class="cert-inner">
+                            <div class="cert-icon internship">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Shell/AICTE Green Skills Internship</h3>
+                                <p class="cert-meta">2025</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1jm-94BTrkgm85D-5XlywDtaTEAmnFL_L/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="internship">
+                        <div class="cert-inner">
+                            <div class="cert-icon internship">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>ServiceNow University Virtual Internship</h3>
+                                <p class="cert-meta">2026</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1UvZEh344sjaXjuMs1TJV655MjQGs-moU/view?usp=drive_link">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="internship">
+                        <div class="cert-inner">
+                            <div class="cert-icon internship">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>AI/ML Virtual Internship (Eduskills)</h3>
+                                <p class="cert-meta">2025</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/17WrLfjUxcVdBvlWQ-_-qomQ2af_3pUmK/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="internship">
+                        <div class="cert-inner">
+                            <div class="cert-icon internship">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Java Full Stack Developer Internship</h3>
+                                <p class="cert-meta">2025</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1qSi8E2Tov0H7dQuQqK3igCjutXHLB3eh/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hackathon Certifications -->
+                    <div class="cert-card winner" data-category="hackathon">
+                        <div class="winner-badge">
+                            <i class="fas fa-trophy"></i>
+                            <span>1st Place</span>
+                        </div>
+                        <div class="cert-inner">
+                            <div class="cert-icon gold">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>CBIT Hackathon (Sudhee 2026)</h3>
+                                <p class="cert-meta">Chaitanya Bharathi Institute of Technology</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1_ke3C589tyRnhMReHZCCEwz-1K7cxWMB/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card winner" data-category="hackathon">
+                        <div class="winner-badge">
+                            <i class="fas fa-trophy"></i>
+                            <span>1st Rank</span>
+                        </div>
+                        <div class="cert-inner">
+                            <div class="cert-icon gold">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Smarathon-26 (Festronix-25)</h3>
+                                <p class="cert-meta">Vardhaman College of Engineering</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1HREG7r8wGEVX7yjP6uMH03jLYknPOq_9/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card winner" data-category="hackathon">
+                        <div class="winner-badge finalist">
+                            <i class="fas fa-medal"></i>
+                            <span>SIH Finalist</span>
+                        </div>
+                        <div class="cert-inner">
+                            <div class="cert-icon gold">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>SIH Hackathon</h3>
+                                <p class="cert-meta">Smart India Hackathon 2025</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1kigH2AnRm8b1kwsckoO8VJXepxUpk21b/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="hackathon">
+                        <div class="cert-inner">
+                            <div class="cert-icon hackathon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>HackerRank Orchestrate May 2026</h3>
+                                <p class="cert-meta">AI Agent Challenge</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1M_KElxatxXopdpIiuHdyeWh9VFOGjj8M/view?usp=drive_link">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="hackathon">
+                        <div class="cert-inner">
+                            <div class="cert-icon hackathon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>NASA Participation Certificate</h3>
+                                <p class="cert-meta">2025</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1AD2LrpFbQ4Vlt2jGYWtLgJiAUmg0J08C/view?usp=drive_link">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="hackathon">
+                        <div class="cert-inner">
+                            <div class="cert-icon hackathon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Impactech Hackathon 2K26</h3>
+                                <p class="cert-meta">Participation Certificate</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/11OyVI_t0iu3dJdCg7kKZTLAP1kNGzzDS/view?usp=drive_link">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="hackathon">
+                        <div class="cert-inner">
+                            <div class="cert-icon hackathon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>HACKIT-ON Hackathon</h3>
+                                <p class="cert-meta">MVSR Engineering College</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1xlB_QvSovww5py5EfhcSJbdbGU5fhjkc/view?usp=drive_link">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="hackathon">
+                        <div class="cert-inner">
+                            <div class="cert-icon hackathon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>ALTHON Participation</h3>
+                                <p class="cert-meta">MVSR</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1Gyv2tZoYYgiTin0-bgKrdawQjAeRF8iz/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card" data-category="hackathon">
+                        <div class="cert-inner">
+                            <div class="cert-icon hackathon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Fusion 2025: CSI Student Convention</h3>
+                                <p class="cert-meta">Participation</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1ooK9ahGClarRNKhM2e_3jAoVVX9torf0/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Course Certifications -->
+                    <!-- Global Certifications -->
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="global">
+                        <div class="cert-inner">
+                            <div class="cert-icon aws">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>AWS Certified Cloud Practitioner</h3>
+                                <p class="cert-meta">Amazon Web Services</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1-3bBwUH57qvHN8sa-7xmawEY_S5uQiXU/view?usp=drive_link">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="global">
+                        <div class="cert-inner">
+                            <div class="cert-icon mongo">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>MongoDB Certified Associate Developer</h3>
+                                <p class="cert-meta">MongoDB</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/124qtzWNflCq0AiHdStk1vJ9Dpyr04ElA/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="global">
+                        <div class="cert-inner">
+                            <div class="cert-icon automation">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Advanced Automation Professional</h3>
+                                <p class="cert-meta">Automation Anywhere</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1_CUiyN69JDSC1-VOCyXoGVz72_BRMetM/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="global">
+                        <div class="cert-inner">
+                            <div class="cert-icon oracle">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Generative AI Professional</h3>
+                                <p class="cert-meta">Oracle</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1kLbCQ5fZfusIsFd55Acls7wb9XQcdncf/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="academic">
+                        <div class="cert-inner">
+                            <div class="cert-icon nptel">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Programming in Java</h3>
+                                <p class="cert-meta">NPTEL</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1jvx_wFE_S41l8XKcXchjNj0KkBmdlT9u/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="global">
+                        <div class="cert-inner">
+                            <div class="cert-icon google">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Gemini Certified Student</h3>
+                                <p class="cert-meta">Google</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1Z4vnqiXupOv96_xBNvPIl2auPam0Fqz8/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="global">
+                        <div class="cert-inner">
+                            <div class="cert-icon tcs">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>TCS iON Career Edge</h3>
+                                <p class="cert-meta">Young Professional Course</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1vOcBvJOPnXga81ZHlRgJYocDVkfJU0Gw/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="academic">
+                        <div class="cert-inner">
+                            <div class="cert-icon codingninjas">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Java Certificate</h3>
+                                <p class="cert-meta">Code 360 by Coding Ninjas</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1NI6bWhr0pSc8Rp-6nY7meLBaVaPmoA3t/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="academic">
+                        <div class="cert-inner">
+                            <div class="cert-icon saylor">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Java Certificate</h3>
+                                <p class="cert-meta">Saylor Academy</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1YHFWOGb1z9Woq4QUAMfLon3IMr_Kz6CJ/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+<div class="cert-card"
+     data-category="course"
+     data-provider="academic">
                     
+                        <div class="cert-inner">
+                            <div class="cert-icon scaler">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>MongoDB Certificate</h3>
+                                <p class="cert-meta">Scaler Topics</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1v5awuf7rvV2JwQHcKngUar8zl5yvmk-j/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="academic">
+                        <div class="cert-inner">
+                            <div class="cert-icon spoken">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>RDBMS Certificate</h3>
+                                <p class="cert-meta">Spoken Tutorial</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1wWpWCbb1RJDIYNL_jSNGqRZAw1UyD37i/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="academic">
+                        <div class="cert-inner">
+                            <div class="cert-icon virtuallabs">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Virtual Labs Certificate</h3>
+                                <p class="cert-meta">Certificate of Participation</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1jl6LAkGevNUIWp3ZZjXknb8MNn5RDvcH/view?usp=drive_link">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Forage Certifications -->
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="forage">
+                        <div class="cert-inner">
+                            <div class="cert-icon forage">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Data Analytics Job Simulation</h3>
+                                <p class="cert-meta">Deloitte - Forage</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1cZyOL3fqXjbcIgws-Uac2iuaBcwj1dZY/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="forage">
+                        <div class="cert-inner">
+                            <div class="cert-icon forage">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Cybersecurity Analyst Job Simulation</h3>
+                                <p class="cert-meta">Forage</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1R1cfLjomd0U_x76oF3KR630hEd9-hG5W/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="forage">
+                        <div class="cert-inner">
+                            <div class="cert-icon forage">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Career Catalyst: Advisory</h3>
+                                <p class="cert-meta">KPMG - Forage</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1J6oB_bYXvRgilFCNAynACd0uKEnzqG5D/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                <div class="cert-card"
+     data-category="course"
+     data-provider="forage">
+                        <div class="cert-inner">
+                            <div class="cert-icon forage">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Data Visualisation: Effective Insights</h3>
+                                <p class="cert-meta">Forage</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/158LmnKQrlF8CaXuHQSPX-bgXBqv2ItZM/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="forage">
+                        <div class="cert-inner">
+                            <div class="cert-icon forage">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>ESG Job Simulation</h3>
+                                <p class="cert-meta">Forage</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1N-Ano43_2z4TVQRmPpcXLoynerRAZoEw/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="forage">
+                        <div class="cert-inner">
+                            <div class="cert-icon forage">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>GenAI Powered Data Analytics</h3>
+                                <p class="cert-meta">Forage</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1W07SBWN86-pqIc28O8wk2fCqAFqzkjoN/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Infosys Certifications -->
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="infosys">
+                        <div class="cert-inner">
+                            <div class="cert-icon infosys">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Python</h3>
+                                <p class="cert-meta">Infosys Springboard</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1DgkVCvZ2XnT9PV52oJDZgVGaHYWT_yqg/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="infosys">
+                        <div class="cert-inner">
+                            <div class="cert-icon infosys">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Java</h3>
+                                <p class="cert-meta">Infosys Springboard</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1vkGhXiQYbsU75tzjd1nnjlaU9eSxG-wW/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="infosys">
+                        <div class="cert-inner">
+                            <div class="cert-icon infosys">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>JavaScript</h3>
+                                <p class="cert-meta">Infosys Springboard</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1yOUPtvMz3CO68bdYwoYX3jcUzhj4CcW2/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="infosys">
+                        <div class="cert-inner">
+                            <div class="cert-icon infosys">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Angular Full Stack</h3>
+                                <p class="cert-meta">Infosys Springboard</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1PEz576lXAGn95SaVzihEOz0wxa4mRMpx/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- IBM Certifications -->
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="ibm">
+                        <div class="cert-inner">
+                            <div class="cert-icon ibm">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Getting Started with Data</h3>
+                                <p class="cert-meta">IBM SkillsBuild</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1PYBwl4ixHlrk7buEhTBHkQZe8oACDEI0/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="ibm">
+                        <div class="cert-inner">
+                            <div class="cert-icon ibm">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Journey to Cloud</h3>
+                                <p class="cert-meta">IBM SkillsBuild</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1M4dZaZdXnEt8bhnK6cxdyiQW6Ezi_YKf/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="ibm">
+                        <div class="cert-inner">
+                            <div class="cert-icon ibm">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Getting Started with AI</h3>
+                                <p class="cert-meta">IBM SkillsBuild</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1gVpnMmhlXJfQ2KzSxhC9_oKQCvUQO9yu/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="ibm">
+                        <div class="cert-inner">
+                            <div class="cert-icon ibm">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Web Development Fundamentals</h3>
+                                <p class="cert-meta">IBM SkillsBuild</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1qqTnTa-JsPafla6g-Wfxx7naKms07j6p/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cert-card"
+     data-category="course"
+     data-provider="ibm">
+                        <div class="cert-inner">
+                            <div class="cert-icon ibm">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3>RAG with LangChain</h3>
+                                <p class="cert-meta">IBM SkillsBuild</p>
+                            </div>
+                            <button class="cert-view-btn" data-url="https://drive.google.com/file/d/1DDjjTxemuGY9w6ydFfWFhpwkGEiPMhKZ/view?usp=sharing">
+                                <span>View</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="content-item-card">
-                    <ul>
-                        <li>
-    <span class="tab-category">Fusion 2025: CSI Student Convention (Participation)</span> 
-    <button class="view-cert-btn" 
-            data-cert-title="Fusion 2025: CSI Student Convention(MVSR)" 
-            data-image-url="https://drive.google.com/file/d/1ooK9ahGClarRNKhM2e_3jAoVVX9torf0/view?usp=sharing">
-        View Certificate
-    </button> 
-</li>
-                    </ul>
-                    
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-number">03</span>
+                        <span class="badge-text">Projects</span>
+                    </div>
+                    <h2 class="section-title">Featured Work</h2>
+                    <p class="section-subtitle">A collection of projects showcasing expertise in full-stack development, AI/ML, and modern web technologies</p>
                 </div>
-            </div>
-        </div>
-        <a href="#certifications-main" class="tab-up-arrow" aria-label="Go back to certifications menu"><i class="fas fa-arrow-up"></i></a>
-    </section>
 
-    <section id="course-certs" class="content-section hidden-content">
-    <h3>Course Certifications</h3>
-    <div class="tab-contents">
-        <div class="content-grid">
-            
-            <div class="content-item-card cert-category-card sub-tab-link" data-target="forage-certs-container">
-                <i class="fas fa-seedling"></i>
-                <p class="card-title">Forage Certifications</p>
-            </div>
-            
-            </div>
-            <div class="content-item-card cert-category-card sub-tab-link" data-target="global-certs-container">
-    <i class="fas fa-globe"></i> <p class="card-title">Certifications</p>
-        </div>
-        <br><br>
-        <div class="content-item-card cert-category-card sub-tab-link" data-target="infosys-certs-container">
-    <i class="fas fa-building"></i> <p class="card-title">Infosys Springboard Certifications</p>
-</div><br><br>
-        <div class="content-item-card cert-category-card sub-tab-link" data-target="ibm-certs-container">
-    <i class="fas fa-ibm"></i> <p class="card-title">IBM SkillsBuild Certifications</p>
-</div><br><br>
+                <div class="projects-grid">
+                    <div class="project-card featured">
+                        <div class="featured-badge">
+                            <span>Featured</span>
+                        </div>
+                        <div class="project-header">
+                            <h3>Career Genome</h3>
+                        </div>
+                        <p class="project-desc">AI-powered career development platform with resume analysis, skill gap detection, interview practice simulator, and real-time career shock alerts.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">AI/ML</span>
+                        </div>
+                        <a href="https://career-genome.onrender.com/" target="_blank" class="project-link">
+                            <span>View Live Demo</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
 
-          
-            
-            </div>
-    </div>
-    <a href="#certifications-main" class="tab-up-arrow" aria-label="Go back to certifications menu"><i class="fas fa-arrow-up"></i></a>
-</section>
-<section id="forage-certs-container" class="nested-content hidden-content">
-    <h3>Forage Certifications</h3>
-    <div class="content-shape content-shape-1"></div>
-    <div class="content-shape content-shape-2"></div>
-    
-    <div class="tab-contents">
-        <div class="content-grid">
-            
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Data Analytics Job Simulation(Deloitte)</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Data Analytics Job Simulation(Forage)" 
-                                data-image-url="https://drive.google.com/file/d/1cZyOL3fqXjbcIgws-Uac2iuaBcwj1dZY/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Career Catalyst: Advisory(KPMG)</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Forage Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1J6oB_bYXvRgilFCNAynACd0uKEnzqG5D/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Cybersecurity Analyst Job Simulation</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Cybersecurity Analyst Job Simulation (Forage)" 
-                                data-image-url="https://drive.google.com/file/d/1R1cfLjomd0U_x76oF3KR630hEd9-hG5W/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-             <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Data Visualisation: Empowering Business
-with Effective Insights</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Data Visualisation: Empowering Business
-with Effective Insights (Forage)" 
-                                data-image-url="https://drive.google.com/file/d/158LmnKQrlF8CaXuHQSPX-bgXBqv2ItZM/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">ESG Job Simulation</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="ESG Job Simulation (Forage)" 
-                                data-image-url="https://drive.google.com/file/d/1N-Ano43_2z4TVQRmPpcXLoynerRAZoEw/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">GenAI Powered Data Analytics Job Simulation</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="GenAI Powered Data Analytics Job Simulation (Forage)" 
-                                data-image-url="https://drive.google.com/file/d/1W07SBWN86-pqIc28O8wk2fCqAFqzkjoN/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-    <a href="#course-certs" class="tab-up-arrow" aria-label="Go back to course certifications"><i class="fas fa-arrow-up"></i></a>
-</section>
-<section id="global-certs-container" class="nested-content hidden-content">
-    <h3> Certifications</h3>
-    <div class="content-shape content-shape-1"></div>
-    <div class="content-shape content-shape-2"></div>
-    
-    <div class="tab-contents">
-        <div class="content-grid">
-            <div class="content-grid">
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">AWS Certified Cloud Practitioner</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="AWS Certified Cloud Practitioner" 
-                                data-image-url="https://drive.google.com/file/d/1-3bBwUH57qvHN8sa-7xmawEY_S5uQiXU/view?usp=drive_link">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">MongoDB Certified Associate Developer</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="MongoDB Certified Associate Developer" 
-                                data-image-url="https://drive.google.com/file/d/124qtzWNflCq0AiHdStk1vJ9Dpyr04ElA/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Certified Advanced Automation Professional (Automation Anywhere)</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Automation Anywhere Advanced Developer" 
-                                data-image-url="https://drive.google.com/file/d/1_CUiyN69JDSC1-VOCyXoGVz72_BRMetM/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Generative AI Professional(Oracle)</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Oracle Certified Professional" 
-                                data-image-url="https://drive.google.com/file/d/1kLbCQ5fZfusIsFd55Acls7wb9XQcdncf/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Programming In Java(Nptel Certification)</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Programming In Java(Nptel Certification)" 
-                                data-image-url="https://drive.google.com/file/d/1jvx_wFE_S41l8XKcXchjNj0KkBmdlT9u/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-        </div>
-        <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Gemini Certified Student</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Gemini Certified Student" 
-                                data-image-url="https://drive.google.com/file/d/1Z4vnqiXupOv96_xBNvPIl2auPam0Fqz8/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-        </div>
-        <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">TCS iON Career Edge: Young Professional Course</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="TCS iON Career Edge: Young Professional Course" 
-                                data-image-url="https://drive.google.com/file/d/1vOcBvJOPnXga81ZHlRgJYocDVkfJU0Gw/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-        </div>
-        
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Java Certificate(Code 360)</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Code 360 by Coding ninjas" 
-                                data-image-url="https://drive.google.com/file/d/1NI6bWhr0pSc8Rp-6nY7meLBaVaPmoA3t/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Java Certificate(Saylor Academy)</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Saylor Academy" 
-                                data-image-url="https://drive.google.com/file/d/1YHFWOGb1z9Woq4QUAMfLon3IMr_Kz6CJ/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">MongoDB Certificate(Scaler Topics)</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="MongoDB Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1v5awuf7rvV2JwQHcKngUar8zl5yvmk-j/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">RDBMS Certificate(Spoken Tutorial)</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="RDBMS Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1wWpWCbb1RJDIYNL_jSNGqRZAw1UyD37i/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-           <div class="content-item-card">
-    <ul>
-        <li>
-            <span class="tab-category">Virtual Labs Certificate</span>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>CollabCode Platform</h3>
+                        </div>
+                        <p class="project-desc">Real-time collaborative coding platform with secure authentication, shared coding rooms, WebSocket synchronization, and code execution.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">WebSockets</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a href="https://github.com/AbhinayaSiruvella-17-05-2006/collabcode-platform" target="_blank" class="project-link">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
 
-            <button class="view-cert-btn" 
-                    data-cert-title="Virtual Labs Certificate of Participation" 
-                    data-image-url="https://drive.google.com/file/d/1jl6LAkGevNUIWp3ZZjXknb8MNn5RDvcH/view?usp=drive_link">
-                View Certificate
-            </button> 
-        </li>
-    </ul>
-</div>
-        </div>
-    </div>
-    
-    <a href="#course-certs" class="tab-up-arrow" aria-label="Go back to course certifications"><i class="fas fa-arrow-up"></i></a>
-</section>
-<section id="infosys-certs-container" class="nested-content hidden-content">
-    <h3>Infosys Certifications</h3>
-    <div class="content-shape content-shape-1"></div>
-    <div class="content-shape content-shape-2"></div>
-    
-    <div class="tab-contents">
-        <div class="content-grid">
-            
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Infosys Springboard - Python</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Python Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1DgkVCvZ2XnT9PV52oJDZgVGaHYWT_yqg/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Infosys Springboard - Java</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Java Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1vkGhXiQYbsU75tzjd1nnjlaU9eSxG-wW/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Infosys Springboard - JavaScript</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="JavaScript Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1yOUPtvMz3CO68bdYwoYX3jcUzhj4CcW2/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Infosys Springboard - Angular Full Stack</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="Angular Full Stack Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1PEz576lXAGn95SaVzihEOz0wxa4mRMpx/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            
-        </div>
-    </div>
-    
-    <a href="#course-certs" class="tab-up-arrow" aria-label="Go back to course certifications"><i class="fas fa-arrow-up"></i></a>
-</section>
-<br><br>
-<section id="ibm-certs-container" class="nested-content hidden-content">
-    <h3>IBM SkillsBuild  Certifications</h3>
-    <div class="content-shape content-shape-1"></div>
-    <div class="content-shape content-shape-2"></div>
-    
-    <div class="tab-contents">
-        <div class="content-grid">
-             <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Getting Started with Data</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="IBM SkillsBuild Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1PYBwl4ixHlrk7buEhTBHkQZe8oACDEI0/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Journey to Cloud:Envisioning Your Solution</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="IBM SkillsBuild Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1M4dZaZdXnEt8bhnK6cxdyiQW6Ezi_YKf/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Getting Started with ARTIFICIAL INTELLIGENCE</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="IBM SkillsBuild Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1gVpnMmhlXJfQ2KzSxhC9_oKQCvUQO9yu/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Web Development Fundamentals</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="IBM SkillsBuild Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1qqTnTa-JsPafla6g-Wfxx7naKms07j6p/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-            <div class="content-item-card">
-                <ul>
-                    <li>
-                        <span class="tab-category">Lab:Retrieval Augmented Generation with LangChain</span>
-                        <button class="view-cert-btn" 
-                                data-cert-title="IBM SkillsBuild Certificate" 
-                                data-image-url="https://drive.google.com/file/d/1DDjjTxemuGY9w6ydFfWFhpwkGEiPMhKZ/view?usp=sharing">
-                            View Certificate
-                        </button> 
-                    </li>
-                </ul>
-            </div>
-           
-        </div>
-    </div>
-    
-    <a href="#course-certs" class="tab-up-arrow" aria-label="Go back to course certifications"><i class="fas fa-arrow-up"></i></a>
-</section>
-<section id="other-certs-container" class="nested-content hidden-content">
-    <h3>Other Certifications</h3>
-    <div class="content-shape content-shape-1"></div>
-    <div class="content-shape content-shape-2"></div>
-    
- <a href="#course-certs" class="tab-up-arrow" aria-label="Go back to course certifications"><i class="fas fa-arrow-up"></i></a>
-</section>
-    <section id="projects" class="section hidden-content">
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-    
-    <div class="project-info">
-        <h3>Job Portal Web Application</h3>
-        <p class="project-specs">React (Vite), Node.js, Express, MongoDB, JWT, Multer, PDFKit</p>
-        <a href="#" class="view-description-btn"
-            data-title="Job Portal Web Application"
-            data-description="A full-stack Job Portal application built using React (Vite) for the frontend and Node.js with Express and MongoDB for the backend. The platform enables secure user authentication using bcrypt and JWT, allowing users to register, log in, and access protected routes. It supports job posting and application management through RESTful APIs. Integrated Multer for resume file uploads and PDFKit for dynamic resume PDF generation. The project demonstrates full-stack development, authentication handling, database integration, and API design."
-            data-link="https://job-portal-2-ojhx.onrender.com/">View Description</a>
-    </div>
-</div>
-<div class="project-card">
-    
-    <div class="project-info">
-        <h3>BhoomiAI</h3>
-        <p class="project-specs">React (Vite), Tailwind CSS, Three.js, Zustand, Framer Motion, Recharts</p>
-        <a href="#" class="view-description-btn"
-            data-title="BhoomiAI"
-            data-description="BhoomiAI is an interactive AI-themed web platform built using React (Vite) and Tailwind CSS. The application features dynamic routing with React Router and global state management using Zustand for smooth performance. Integrated Three.js via @react-three/fiber and drei to render immersive 3D visualizations. Framer Motion enhances UI animations, while Recharts enables clean and responsive data visualization dashboards. This project demonstrates advanced front-end architecture, 3D rendering integration, and modern UI/UX development practices."
-            data-link="https://bhoomi-frontend.onrender.com/">View Description</a>
-    </div>
-</div>
-<div class="project-card">
-    
-    <div class="project-info">
-        <h3>Career Genome</h3>
-        <p class="project-specs">React (Vite), Flask, MongoDB Atlas, Tailwind CSS, JWT, Python (Pandas, NumPy), AI-based Analysis</p>
-        <a href="#" class="view-description-btn"
-            data-title="Career Genome"
-            data-description="Career Genome is an AI-powered career development platform designed to help users analyze their career readiness and improve their job prospects. Built using React (Vite) for the frontend and Flask for the backend, the platform integrates MongoDB Atlas for secure data storage and JWT for authentication. It features resume-based career readiness analysis, skill gap detection with personalized learning roadmaps, an AI-powered interview practice simulator, failure analysis for career setbacks, and real-time career shock alerts that monitor layoffs and emerging tech skills. The platform combines data analytics, AI-driven insights, and interactive tools to help students and professionals build stronger career paths."
-            data-link="https://career-genome.onrender.com/">View Description</a>
-    </div>
-</div>
-<div class="project-card">
-    
-    <div class="project-info">
-        <h3>CollabCode Platform</h3>
-        <p class="project-specs">Java 17, Spring Boot, Spring Security, JWT, WebSockets, PostgreSQL, React.js, Tailwind CSS, Docker</p>
-        <a href="#" class="view-description-btn"
-            data-title="CollabCode Platform"
-            data-description="CollabCode Platform is a full-stack real-time collaborative coding application designed for developers to write, edit, and execute code together. Built with Java 17, Spring Boot, Spring Security, JWT authentication, PostgreSQL, and React.js, the platform enables secure user authentication, role-based authorization, shareable coding rooms, and real-time code synchronization using WebSockets (STOMP). It features an integrated Monaco code editor, execution history tracking, dashboard management, and a secure code execution environment. Docker and Docker Compose are used for containerized deployment, ensuring scalability, reliability, and streamlined development workflows."
-            data-link="https://github.com/AbhinayaSiruvella-17-05-2006/collabcode-platform">
-            View Description
-        </a>
-    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>LinkForge</h3>
+                        </div>
+                        <p class="project-desc">Production-grade distributed URL shortening platform with Redis caching, Kafka analytics, QR generation, and password-protected links.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Kafka</span>
+                        </div>
+                        <a href="https://github.com/AbhinayaSiruvella-17-05-2006/linkforge-platform" target="_blank" class="project-link">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
 
-</div>
-<div class="project-card">
-    
-    <div class="project-info">
-        <h3>LinkForge</h3>
-        <p class="project-specs">React 18, Vite, Tailwind CSS, Java 17, Spring Boot 3, PostgreSQL, Redis, Kafka, JWT, Docker</p>
-        <a href="#" class="view-description-btn"
-            data-title="LinkForge"
-            data-description="LinkForge is a production-grade distributed URL shortening platform inspired by Bitly and TinyURL. Built using React 18, Spring Boot 3, PostgreSQL, Redis, Kafka, and Docker, the application provides secure JWT-based authentication, custom short links, QR code generation, link expiration, password-protected URLs, and one-time access links. Redis caching ensures high-performance redirects, while Kafka enables asynchronous click-event processing for scalable analytics. The platform includes real-time traffic insights, browser and device tracking, admin moderation tools, rate limiting, spam detection, and an interactive dashboard with Recharts and Framer Motion, demonstrating expertise in full-stack development, distributed systems, and cloud-ready architecture."
-            data-link="https://github.com/AbhinayaSiruvella-17-05-2006/linkforge-platform">
-            View Description
-        </a>
-    </div>
+                    <div class="project-card featured">
+                        <div class="featured-badge">
+                            <span>Featured</span>
+                        </div>
+                        <div class="project-header">
+                            <h3>BhoomiAI</h3>
+                        </div>
+                        <p class="project-desc">Interactive AI-themed web platform featuring 3D visualizations, dynamic dashboards, and modern UI/UX with advanced animations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">Zustand</span>
+                            <span class="tech-tag">Framer Motion</span>
+                        </div>
+                        <a href="https://bhoomi-frontend.onrender.com/" target="_blank" class="project-link">
+                            <span>View Live Demo</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
 
-</div>
-<div class="project-card">
-    
-    <div class="project-info">
-        <h3>Smart Traffic Management System</h3>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Job Portal Web Application</h3>
+                        </div>
+                        <p class="project-desc">Full-stack job portal with secure authentication, job posting, application management, resume uploads, and PDF generation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                        <a href="https://job-portal-2-ojhx.onrender.com/" target="_blank" class="project-link">
+                            <span>View Live Demo</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
 
-        <p class="project-specs">
-            React + TypeScript | Vite | Tailwind CSS | Python (Flask) | YOLOv8 | REST APIs
-        </p>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Smart Traffic Management System</h3>
+                        </div>
+                        <p class="project-desc">AI-powered traffic monitoring with YOLOv8 vehicle detection, signal simulation, route finding, and weather integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="https://github.com/AbhinayaSiruvella-17-05-2006/Smart-Traffic-Management-System" target="_blank" class="project-link">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
 
-        <a href="#" class="view-description-btn"
-            data-title="Smart Traffic Management System"
-
-            data-description="Smart Traffic Management System is an intelligent traffic monitoring and analysis platform developed using React + TypeScript, Vite, and Tailwind CSS for the frontend, with Python Flask services powering the backend. The system integrates YOLOv8 (Ultralytics models) for real-time vehicle detection and traffic density analysis. Features include smart traffic signal simulation, route finding, weather alerts integration, and a traffic awareness quiz module. REST APIs enable seamless communication between frontend and backend services. The platform is designed to improve traffic monitoring efficiency using AI-powered computer vision and real-time data processing technologies."
-
-            data-link="https://github.com/AbhinayaSiruvella-17-05-2006/Smart-Traffic-Management-System">
-            View Description
-        </a>
-
-    </div>
-</div>
-<div class="project-card">
-    
-    <div class="project-info">
-        <h3>Context-Aware Doubt Chatbot</h3>
-
-        <p class="project-specs">
-            React | Python | Flask | REST APIs | AI Chatbot | Voice Support | Translation System
-        </p>
-
-        <a href="#" class="view-description-btn"
-            data-title="Context-Aware Doubt Chatbot"
-
-            data-description="Context-Aware Doubt Chatbot is an intelligent AI-powered learning assistant designed to help students resolve doubts instantly while studying. The platform allows users to view study materials, upload files, add custom content, and ask questions directly within the learning environment. Unlike generic chatbots, the system understands lesson context, highlighted text, and current study sections to generate accurate and relevant responses. Built using React for the frontend and Python Flask services for the backend, the application supports voice input/output, multilingual translation, chat history storage, and downloadable conversations. The chatbot improves learning continuity by providing real-time context-based assistance without forcing students to switch platforms."
-
-            data-link="https://contextawaredoubtchatbot-1.onrender.com/">
-            View Description
-        </a>
-
-    </div>
-</div>
-<div class="project-card">
-    
-    <div class="project-info">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Context-Aware Doubt Chatbot</h3>
+                        </div>
+                        <p class="project-desc">AI-powered learning assistant with voice support, multilingual translation, file uploads, and context-based doubt resolution.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Voice API</span>
+                        </div>
+                        <a href="https://contextawaredoubtchatbot-1.onrender.com/" target="_blank" class="project-link">
+                            <span>View Live Demo</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                      <div class="project-card">
+                        <div class="project-header">
+                            <h3>OILWISE - Health Platform</h3>
+                        </div>
+                        <p class="project-desc">Food and oil consumption analysis with AI insights, analytics dashboards, India maps, and gamification.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <a href="https://github.com/AbhinayaSiruvella-17-05-2006/OILWISE" target="_blank" class="project-link">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-card">
+    <div class="project-header">
         <h3>E-Commerce Sales Analysis & Customer Insights Dashboard</h3>
-
-        <p class="project-specs">
-            Power BI, Python (Pandas, NumPy), SQL (MySQL), Excel, CSV
-        </p>
-
-        <a href="#" class="view-description-btn"
-            data-title="E-Commerce Sales Analysis & Customer Insights Dashboard"
-
-            data-description="E-Commerce Sales Analysis & Customer Insights Dashboard is an end-to-end business intelligence project developed using Power BI, Python, and SQL to analyze sales performance, customer behavior, and operational efficiency. The project involves data cleaning and preprocessing using Python libraries such as Pandas and NumPy, followed by business analysis through SQL queries. An interactive Power BI dashboard was created to visualize KPIs, monthly sales trends, category-wise and region-wise performance, top customers, and shipping analysis. The dashboard helps businesses identify growth opportunities, monitor performance, understand purchasing patterns, and support data-driven decision-making through actionable insights and interactive visualizations."
-
-            data-link="https://github.com/AbhinayaSiruvella-17-05-2006/ecommerce-customer-segmentation-analysis">
-            View Description
-        </a>
-
     </div>
+    <p class="project-desc">Sales and customer behavior analysis with interactive Power BI dashboards, KPI tracking, SQL analytics, and business insights.</p>
+    <div class="project-tech">
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Pandas</span>
+        <span class="tech-tag">MySQL</span>
+    </div>
+    <a href="https://github.com/AbhinayaSiruvella-17-05-2006/ecommerce-customer-segmentation-analysis" target="_blank" class="project-link">
+        <span>View on GitHub</span>
+        <i class="fab fa-github"></i>
+    </a>
 </div>
 <div class="project-card">
-    
-    <div class="project-info">
-        <h3>HR Analytics Dashboard | Employee Attrition Analysis</h3>
-
-        <p class="project-specs">
-            Power BI, Python (Pandas), SQL (MySQL)
-        </p>
-
-        <a href="#" class="view-description-btn"
-            data-title="HR Analytics Dashboard | Employee Attrition Analysis"
-
-            data-description="HR Analytics Dashboard is a data analysis and visualization project focused on understanding employee attrition trends and identifying the key factors affecting workforce retention. The project uses Python (Pandas) for data cleaning and preprocessing, SQL (MySQL) for analytical queries, and Power BI for creating an interactive business intelligence dashboard. The dashboard provides insights into attrition by department, job role, salary, age group, work experience, and job satisfaction. KPI cards and interactive filters help HR teams monitor employee turnover patterns and make data-driven decisions to improve retention strategies, employee engagement, and workforce planning."
-
-            data-link="https://github.com/AbhinayaSiruvella-17-05-2006/hr_analytics-dashboard">
-            View Description
-        </a>
-
+    <div class="project-header">
+        <h3>HR Analytics Dashboard</h3>
     </div>
+    <p class="project-desc">Employee attrition analysis with HR dashboards, workforce insights, retention metrics, KPI visualization, and data-driven decisions.</p>
+    <div class="project-tech">
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Pandas</span>
+        <span class="tech-tag">MySQL</span>
+    </div>
+    <a href="https://github.com/AbhinayaSiruvella-17-05-2006/hr_analytics-dashboard" target="_blank" class="project-link">
+        <span>View on GitHub</span>
+        <i class="fab fa-github"></i>
+    </a>
 </div>
 <div class="project-card">
-    
-    <div class="project-info">
-        <h3>AI-Powered National Highway Monitoring System</h3>
-
-        <p class="project-specs">
-            React + TypeScript, Tailwind CSS, Chart.js, Lucide Icons, Flask (Python), REST APIs
-        </p>
-
-        <a href="#" class="view-description-btn"
-            data-title="AI-Powered National Highway Monitoring System"
-
-            data-description="AI-Powered National Highway Monitoring System is a smart web application developed for real-time highway surveillance and traffic management. The platform provides a live dashboard to monitor traffic conditions, accidents, alerts, and highway camera activity. It includes an alert management system with severity-based notifications, analytics dashboards for traffic and accident trends, and an AI detection module for analyzing uploaded images related to traffic or accidents. Built using React + TypeScript and Tailwind CSS for the frontend, and Flask-based REST APIs for the backend, the system also features zone-wise highway monitoring and emergency response support. The project demonstrates modern full-stack development combined with AI-assisted traffic monitoring concepts."
-
-            data-link="https://github.com/AbhinayaSiruvella-17-05-2006/Road-Damage-Detection">
-            View Description
-        </a>
-
+    <div class="project-header">
+        <h3>Employee Salary Prediction</h3>
     </div>
-</div>
-<div class="project-card">
-    
-    <div class="project-info">
-        <h3>OILWISE – Food & Oil Consumption Analysis Platform</h3>
-
-        <p class="project-specs">
-            React (Vite), Tailwind CSS, JavaScript, Node.js, Express.js, SQL, Firebase, Supabase
-        </p>
-
-        <a href="#" class="view-description-btn"
-            data-title="OILWISE – Food & Oil Consumption Analysis Platform"
-
-            data-description="OILWISE is a full-stack web application designed to analyze food and oil consumption patterns and provide users with AI-powered health insights and dietary recommendations. The platform features interactive dashboards, consumption analytics, India-based usage visualization maps, leaderboard and gamification modules, and authentication functionality for personalized user experiences. Built using React (Vite) and Tailwind CSS for the frontend, with Node.js and Express.js powering the backend, the project also integrates SQL-based data handling, Firebase services, and Supabase integration. The application focuses on promoting healthier dietary decisions through data-driven insights and modern web technologies."
-
-            data-link="https://github.com/AbhinayaSiruvella-17-05-2006/OILWISE">
-            View Description
-        </a>
-
+    <p class="project-desc">Machine learning-based salary prediction using Python, Scikit-learn, Flask deployment, and real-time interactive forecasting.</p>
+    <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Scikit-learn</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">Machine Learning</span>
     </div>
+    <a href="https://github.com/AbhinayaSiruvella-17-05-2006/Employee-Salary-Prediction" target="_blank" class="project-link">
+        <span>View on GitHub</span>
+        <i class="fab fa-github"></i>
+    </a>
 </div>
-<div class="project-card">
-    
-    <div class="project-info">
-        <h3>AI Recipe Preparation Agent</h3>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Time Series Forecasting System</h3>
+                        </div>
+                        <p class="project-desc">ML system predicting weekly sales using SARIMA, Prophet, XGBoost, and LSTM with FastAPI endpoints and Docker deployment.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a href="https://github.com/AbhinayaSiruvella-17-05-2006/time-series-forecasting-system-api" target="_blank" class="project-link">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
 
-        <p class="project-specs">
-            Tech Stack: Python, Streamlit, Gemini AI, Pandas, NumPy, Matplotlib
-        </p>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Finance Dashboard UI</h3>
+                        </div>
+                        <p class="project-desc">Modern financial dashboard with transaction management, analytics, role-based UI, and local storage persistence.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Recharts</span>
+                            <span class="tech-tag">Tailwind</span>
+                        </div>
+                        <a href="https://finance-dashboard-ui-indol.vercel.app/" target="_blank" class="project-link">
+                            <span>View Live Demo</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
 
-        <a href="#" class="view-description-btn"
-            data-title="AI Recipe Preparation Agent"
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>AI-Powered National Highway Monitoring</h3>
+                        </div>
+                        <p class="project-desc">Smart highway surveillance with live dashboards, alert management, AI detection, and zone-wise monitoring.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">AI</span>
+                        </div>
+                        <a href="https://github.com/AbhinayaSiruvella-17-05-2006/Road-Damage-Detection" target="_blank" class="project-link">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
 
-            data-description="AI Recipe Preparation Agent is an AI-powered food assistance application developed using Python and Streamlit to help users generate smart recipe suggestions from available or leftover ingredients. The system integrates Gemini AI for intelligent recipe generation and personalized food recommendations. Users can input ingredients manually and receive AI-generated cooking ideas, helping reduce food waste and improve meal planning. The application also utilizes Pandas and NumPy for data handling and Matplotlib for visualization support. Designed with an interactive and user-friendly interface, the project demonstrates the integration of generative AI with real-world food and sustainability applications."
-
-            data-link="https://github.com/AbhinayaSiruvella-17-05-2006/-Recipe-Preparation-Agent">
-            View Description
-        </a>
-
-    </div>
-</div>
- <div class="project-card">
-            
-                <div class="project-info">
-                    <h3>Quiz App</h3>
-                    <p class="project-specs">React, Node.js, MongoDB</p>
-                    <a href="#" class="view-description-btn"
-                        data-title="Quiz App"
-                        data-description="A quiz application built with HTML, CSS, and JavaScript. This project allows users to select the number of questions and a subject to customize their quiz. The app dynamically generates questions, tracks the user's score, and provides a downloadable scorecard and a feature to review answers. It highlights strong skills in front-end development, including dynamic content generation and data manipulation."
-                        data-link="https://quiz-app-nu-ebon.vercel.app/">View Description</a>
-                </div>
-            </div>
-            <div class="project-card">
-                
-                <div class="project-info">
-                    <h3>TO-do List App</h3>
-                    <p class="project-specs">HTML, CSS, JavaScript</p>
-                    <a href="#" class="view-description-btn"
-                        data-title="TO-do List App"
-                        data-description="A To-Do List Application is a web-based tool built with HTML, CSS, and JavaScript to manage tasks. Users can add, edit, and delete tasks with a clean interface. JavaScript handles dynamic interactions and saves data locally, demonstrating core front-end development skills. This project showcases the ability to create a functional and interactive web application from the ground up."
-                        data-link="https://to-do-list-app-ecru-tau.vercel.app/">View Description</a>
-                </div>
-            </div>
-           <div class="project-card">
-                
-                <div class="project-info">
-                    <h3>Dynamic Resume Builder</h3>
-                    <p class="project-specs">HTML,CSS,JavaScript</p>
-                    <a href="#" class="view-description-btn"
-                        data-title="Dynamic Resume Builder"
-                        data-description="A dynamic resume builder developed with HTML, CSS, and JavaScript that allows users to create and customize a professional resume. The application uses JavaScript to add and edit sections, enabling users to generate a polished resume without manual formatting. This project highlights a strong command of front-end technologies, including DOM manipulation and dynamic content generation for a user-friendly experience."
-                        data-link="https://dynamic-resume-builder-pi-orpin.vercel.app/">View Description</a>
-                </div>
-            </div>
-             <div class="project-card">
-                
-                <div class="project-info">
-                    <h3>Rock-Paper-Scissors Game</h3>
-                    <p class="project-specs">HTML,CSS,JavaScript</p>
-                    <a href="#" class="view-description-btn"
-                        data-title="Rock-Paper-Scissors Game"
-                        data-description="Developed an interactive Rock-Paper-Scissors game using HTML, CSS, and JavaScript. The project features a user-friendly interface that allows players to compete against a computer opponent. It demonstrates an understanding of event handling, conditional logic, and DOM manipulation to create a dynamic and engaging user experience. The game tracks scores and provides real-time feedback."
-                        data-link="https://dynamic-resume-builder-dha7.vercel.app/">View Description</a>
-                </div>
-            </div>
-            <div class="project-card">
-                
-                <div class="project-info">
-                    <h3>Smart Email Generator</h3>
-                    <p class="project-specs">HTML,CSS,FLASK</p>
-                    <a href="#" class="view-description-btn"
-                        data-title="Smart Email Generator"
-                        data-description="A smart email generator created using HTML, CSS, and the Flask framework to help users draft emails efficiently. Users can input a recipient and topic to get a generated draft. The application can also generate replies in various tones, such as professional, friendly, or casual, by leveraging the power of Flask to handle back-end logic and data processing. This project demonstrates a full-stack approach, integrating front-end design with back-end functionality."
-                        data-link="https://github.com/AbhinayaSiruvella-17-05-2006/Smart-Email-Generator">View Description</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                
-                <div class="project-info">
-                    <h3>Employee Salary Predicition</h3>
-                    <p class="project-specs">FLASK</p>
-                    <a href="#" class="view-description-btn"
-                        data-title="Employee Salary Predicition"
-                        data-description="Developed a machine learning model using Python to predict employee salaries based on features like experience and job role. Built a user-friendly web application with the Flask framework, allowing real-time salary predictions through an interactive interface. The project involved data preprocessing, model training with Scikit-learn, and deployment, demonstrating a full-stack approach to a machine learning problem."
-                        data-link="https://github.com/AbhinayaSiruvella-17-05-2006/Employee-Salary-Prediction">View Description</a>
-                </div>
-            </div>
-            <div class="project-card">
-                
-                <div class="project-info">
-                    <h3>AI-Powered Chatbot </h3>
-                    <p class="project-specs">Streamlit</p>
-                    <a href="#" class="view-description-btn"
-                        data-title="AI-Powered Chatbot "
-                        data-description="Developed a conversational AI chatbot using Python and Streamlit, integrating a third-party API  for natural language understanding and generation. The project focused on building an intuitive user interface that sends user queries to the API and processes the AI's responses. This demonstrates experience in API integration, front-end development, and the application of cutting-edge AI models to create interactive applications."
-                        data-link="https://github.com/AbhinayaSiruvella-17-05-2006/AI-Powered-Chatbot">View Description</a>
-                </div>
-            </div>
-            <div class="project-card">
-    
-    <div class="project-info">
-        <h3>Time Series Forecasting System with API</h3>
-
-        <p class="project-specs">
-            Python, Pandas, NumPy, Statsmodels, Prophet, XGBoost, PyTorch, FastAPI, Docker, Pytest
-        </p>
-
-        <a href="#" class="view-description-btn"
-            data-title="Time Series Forecasting System with API"
-
-            data-description="Time Series Forecasting System with API is an end-to-end machine learning project developed to predict weekly sales across US states using historical sales data. The system trains and compares multiple forecasting models including SARIMA, Facebook Prophet, XGBoost with lag features, and LSTM using PyTorch. Advanced feature engineering techniques such as lag features, rolling statistics, calendar-based features, and holiday indicators were implemented to improve forecasting performance. The pipeline handles missing dates, mixed date formats, weekly resampling, and time-series validation to avoid data leakage. The best-performing model for each state is automatically selected based on evaluation metrics including SMAPE, MAE, and RMSE. Predictions are served through FastAPI REST endpoints with Docker support for deployment, demonstrating a production-oriented machine learning workflow and scalable forecasting architecture."
-
-            data-link="https://github.com/AbhinayaSiruvella-17-05-2006/time-series-forecasting-system-api">
-            View Description
-        </a>
-
-    </div>
-</div>
-<div class="project-card">
-    
-    <div class="project-info">
-        <h3>Finance Dashboard UI</h3>
-
-        <p class="project-specs">
-            React, TypeScript, Vite, Tailwind CSS, shadcn/ui, Recharts, Local Storage
-        </p>
-
-        <a href="#" class="view-description-btn"
-            data-title="Finance Dashboard UI"
-
-            data-description="Finance Dashboard UI is a modern and responsive frontend-focused financial management dashboard built using React, TypeScript, and Vite. The application provides users with an interactive interface to monitor financial summaries, analyze spending patterns, and manage transactions through dynamic charts and clean UI components. Features include dashboard analytics, transaction filtering and search, role-based UI simulation (Admin and Viewer), insights generation, and local storage persistence for maintaining user data across sessions. Built with Tailwind CSS and shadcn/ui for styling, the project emphasizes reusable component architecture, responsive design, frontend state management using React hooks, and an intuitive user experience across desktop, tablet, and mobile devices."
-
-            data-link="https://finance-dashboard-ui-indol.vercel.app/">
-            View Description
-        </a>
-
-    </div>
-</div>
-            <div class="project-card">
-                
-                <div class="project-info">
-                    <h3>Calculator</h3>
-                    <p class="project-specs">HTML,CSS,JavaScript</p>
-                    <a href="#" class="view-description-btn"
-                        data-title="Calculator"
-                        data-description="Developed a fully functional calculator using HTML, CSS, and JavaScript to perform basic arithmetic operations. The project highlights front-end development skills, including creating a responsive user interface with HTML and CSS and implementing dynamic logic with JavaScript to handle user input and calculations. This project showcases an understanding of event handling, DOM manipulation, and fundamental programming concepts."
-                        data-link="https://calculator-zeta-ashen-37.vercel.app/">View Description</a>
-                </div>
-            </div>
-           
-        </div>
-        <div class="section-shape shape-1"></div>
-        <div class="section-shape shape-2"></div>
-        <div class="section-shape shape-3"></div>
-    </section>
-
-    <section id="contact" class="section hidden-content">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Get in Touch</h3>
-                <p>Have a question or want to work together? I'd love to hear from you!</p>
-                <div class="contact-details">
-                    <p><i class="fas fa-envelope"></i> siruvellaabhinaya17@gmail.com</p>
-                    <p><i class="fas fa-phone"></i>+91 8500868651</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Hyderabad, India</p>
-                </div>
-                <div class="social-links-contact">
-                    <a href="https://github.com/AbhinayaSiruvella-17-05-2006" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/siruvella-abhinaya-8504572bb" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>AI Recipe Preparation Agent</h3>
+                        </div>
+                        <p class="project-desc">AI-powered food assistant using Gemini AI for smart recipe suggestions from available ingredients.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Gemini AI</span>
+                        </div>
+                        <a href="https://github.com/AbhinayaSiruvella-17-05-2006/-Recipe-Preparation-Agent" target="_blank" class="project-link">
+                            <span>View on GitHub</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-card">
+    <div class="project-header">
+        <h3>Smart Email Generator</h3>
+    </div>
+    <p class="project-desc">
+        Generates professional email drafts with customizable tones using Flask, form processing, and dynamic content generation.
+    </p>
+    <div class="project-tech">
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">HTML/CSS</span>
+        <span class="tech-tag">JavaScript</span>
+    </div>
+    <a href="https://github.com/AbhinayaSiruvella-17-05-2006/Smart-Email-Generator" target="_blank" class="project-link">
+        <span>View on GitHub</span>
+        <i class="fab fa-github"></i>
+    </a>
+</div>
+                    <div class="project-card">
+    <div class="project-header">
+        <h3>AI-Powered Chatbot</h3>
+    </div>
+    <p class="project-desc">
+        Conversational AI chatbot with API integration, natural language understanding, response generation, and interactive user interactions.
+    </p>
+    <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Streamlit</span>
+        <span class="tech-tag">API Integration</span>
+        <span class="tech-tag">Generative AI</span>
+    </div>
+    <a href="https://github.com/AbhinayaSiruvella-17-05-2006/AI-Powered-Chatbot" target="_blank" class="project-link">
+        <span>View on GitHub</span>
+        <i class="fab fa-github"></i>
+    </a>
+</div>
                 </div>
                 
             </div>
-        </div>
-        <div class="section-shape shape-1"></div>
-        <div class="section-shape shape-2"></div>
-        <div class="section-shape shape-3"></div>
-    </section>
-
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3 id="modalTitle"></h3>
-            <p id="modalDescription"></p>
             
-            <a href="#" target="_blank" class="modal-cta-button">View Project</a>
-    
-    <div class="modal-shape modal-shape-1"></div>
-    <div class="modal-shape modal-shape-2"></div>
-    <div class="modal-shape modal-shape-3"></div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-number">04</span>
+                        <span class="badge-text">Contact</span>
+                    </div>
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p class="section-subtitle">I'm eager to connect and explore new opportunities. Whether you have a project in mind or just want to chat about technology.</p>
+                </div>
+
+                <div class="contact-content">
+                    <a href="mailto:siruvellaabhinaya17@gmail.com" class="contact-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Send Message</span>
+                    </a>
+
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <span class="info-label">Email</span>
+                                <span class="info-value">siruvellaabhinaya17@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <span class="info-label">Phone</span>
+                                <span class="info-value">+91 8500868651</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Hyderabad, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials">
+                        <a href="https://github.com/AbhinayaSiruvella-17-05-2006" target="_blank" class="contact-social-btn">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/siruvella-abhinaya-8504572bb" target="_blank" class="contact-social-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Designed & Built by Siruvella Abhinaya</p>
+            <p>&copy; 2026 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Certificate Modal -->
+    <div class="modal-overlay" id="cert-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <iframe id="cert-viewer" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
-
-    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="js/script.js"></script>
 </body>
 </html>
-
